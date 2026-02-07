@@ -32,8 +32,20 @@ process.on('unhandledRejection', (reason, promise) => {
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Connect to MongoDB (optional - only for auth/users/leads)
-connectDB().catch(err => {
+// Connect to MongoDB
+connectDB().then(async (db) => {
+    if (db) {
+        try {
+            const count = await db.collection('vehicles').countDocuments();
+            console.log(`📊 Current vehicle count: ${count}`);
+            if (count === 0) {
+                console.log('⚠️  Database appears empty. You should run "npm run seed" to populate it with initial data.');
+            }
+        } catch (e) {
+            console.warn('⚠️  Could not check vehicle count:', e.message);
+        }
+    }
+}).catch(err => {
     console.warn('⚠️  Continuing without MongoDB - vehicle data will work via mock data');
     console.warn('   Auth, saved vehicles, and leads require MongoDB');
 });
