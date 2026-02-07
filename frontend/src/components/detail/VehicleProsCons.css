@@ -1,0 +1,152 @@
+.pros-cons-section {
+    margin: 40px 0;
+    padding: 40px 0;
+    border-top: 1px solid var(--border);
+}
+
+.pros-cons-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.pros-cons-subtitle {
+    text-align: center;
+    color: var(--muted);
+    font-size: 1rem;
+    margin-bottom: 32px;
+}
+
+.pros-cons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+/* Card Styles */
+.pros-card,
+.cons-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pros-card:hover,
+.cons-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Header Styles */
+.card-header {
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pros-header {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.cons-header {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+}
+
+.header-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+}
+
+/* List Styles */
+.pros-list,
+.cons-list {
+    list-style: none;
+    padding: 24px;
+    margin: 0;
+}
+
+.pros-item,
+.cons-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.pros-item:last-child,
+.cons-item:last-child {
+    border-bottom: none;
+}
+
+.item-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.pros-item .item-icon {
+    background: #d1fae5;
+    color: #059669;
+}
+
+.cons-item .item-icon {
+    background: #fed7aa;
+    color: #d97706;
+}
+
+.item-text {
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pros-cons-section {
+        margin: 24px 0;
+        padding: 24px 0;
+    }
+
+    .pros-cons-title {
+        font-size: 1.5rem;
+    }
+
+    .pros-cons-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pros-list,
+    .cons-list {
+        padding: 16px;
+    }
+}

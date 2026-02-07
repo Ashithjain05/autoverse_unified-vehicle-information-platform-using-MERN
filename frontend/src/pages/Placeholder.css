@@ -1,0 +1,29 @@
+.placeholder-page {
+    min-height: calc(100vh - 72px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-light);
+}
+
+.placeholder-content {
+    text-align: center;
+    padding: var(--spacing-2xl);
+}
+
+.placeholder-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-dark);
+}
+
+.placeholder-content p {
+    font-size: 1.25rem;
+    color: var(--muted);
+    margin-bottom: var(--spacing-xl);
+}
+
+.placeholder-icon {
+    font-size: 5rem;
+    opacity: 0.5;
+}
