@@ -52,7 +52,16 @@ connectDB().then(async (db) => {
 });
 
 // Middleware
-app.use(helmet()); // Security headers
+app.use(helmet({
+    crossOriginResourcePolicy: false,
+})); // Security headers
+
+// Debug CORS
+app.use((req, res, next) => {
+    console.log(`📡 Request from Origin: ${req.headers.origin}`);
+    next();
+});
+
 app.use(cors({
     origin: [
         'http://localhost:5173',
