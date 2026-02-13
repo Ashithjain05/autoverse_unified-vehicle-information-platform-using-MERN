@@ -30,6 +30,7 @@ process.on('unhandledRejection', (reason, promise) => {
 
 // Initialize Express app
 const app = express();
+app.set('trust proxy', 1); // Trust first proxy (Render/Vercel)
 const PORT = process.env.PORT || 5000;
 
 // Connect to MongoDB
