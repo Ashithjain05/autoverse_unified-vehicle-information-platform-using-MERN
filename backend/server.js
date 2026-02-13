@@ -58,7 +58,7 @@ app.use(cors({
         'http://localhost:5173',
         'http://localhost:5174',
         'https://autoversefrontend.vercel.app',
-        process.env.FRONTEND_URL
+        process.env.FRONTEND_URL ? process.env.FRONTEND_URL.replace(/\/$/, '') : null
     ].filter(Boolean),
     credentials: true
 }));
